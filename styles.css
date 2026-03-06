@@ -89,6 +89,12 @@ a:hover{
   font-size:0.98rem;
 }
 
+.post-date{
+  font-size:0.85rem;
+  color:var(--muted);
+  margin:0 0 4px !important;
+}
+
 @media (max-width: 480px){
   h1{ font-size: 2rem; }
   p{ font-size: 1rem; }
