@@ -3,7 +3,8 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Identity as the Modern Control Plane — Austin Smith</title>
+  <meta name="description" content="What studying for cloud identity certifications revealed about the gap between theory and real-world architecture decisions." />
+  <title>Lessons from Studying Cloud Identity — Austin Smith</title>
 
   <link rel="icon" type="image/png" href="/favicon.png" />
   <link rel="stylesheet" href="../styles.css" />
@@ -11,26 +12,81 @@
 <body>
   <div class="container">
 
-    <h1>Identity as the Modern Control Plane</h1>
+    <h1>Lessons from Studying Cloud Identity</h1>
     <p><em>March 2026</em></p>
 
     <p>
-      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer
-      tincidunt, velit a tincidunt efficitur, magna tortor facilisis
-      lectus, non commodo odio nunc et nisl.
+      Certification exams have a reputation for testing trivia rather than understanding.
+      Some of that reputation is earned. But studying for cloud identity certifications —
+      and the CISSP before them — taught me things I hadn't fully articulated before,
+      even after working in this space.
     </p>
 
     <p>
-      Sed ut perspiciatis unde omnis iste natus error sit voluptatem
-      accusantium doloremque laudantium, totam rem aperiam, eaque ipsa
-      quae ab illo inventore veritatis et quasi architecto beatae vitae
-      dicta sunt explicabo.
+      The value wasn't in memorizing protocol flows. It was in being forced to think
+      systematically about topics I usually approach piecemeal.
+    </p>
+
+    <h2>Theory reveals what you've been assuming</h2>
+
+    <p>
+      When you work in an environment long enough, you develop intuitions about how things
+      work. Some of those intuitions are correct. Some are wrong in ways you've never had
+      reason to discover because the wrong version still produced the outcome you wanted.
     </p>
 
     <p>
-      Ut enim ad minima veniam, quis nostrum exercitationem ullam
-      corporis suscipit laboriosam, nisi ut aliquid ex ea commodi
-      consequatur.
+      Studying OAuth 2.0 flows in depth — all the grant types, not just the ones I use daily —
+      revealed a few places where my mental model had gaps. The device authorization grant
+      is a good example: I knew it existed, but hadn't thought carefully about the
+      security properties that make it appropriate for constrained devices versus the
+      risks it introduces if you apply it too broadly. The exam forces you to think
+      through scenarios you haven't encountered yet.
+    </p>
+
+    <h2>Architecture decisions look different from the top</h2>
+
+    <p>
+      The CISSP covers identity from a governance and architecture layer, not a
+      configuration layer. That altitude shift is genuinely useful. Instead of asking
+      "how do I configure this," you're asking "why does this control exist, and what
+      does it fail to address?"
+    </p>
+
+    <p>
+      The IAM domain in particular pushed me to think about provisioning and deprovisioning
+      as a lifecycle problem, not a one-time task. Access that isn't reviewed and revoked
+      accumulates. Most privilege escalation paths I've seen aren't about breaking authentication —
+      they're about exploiting access that should have been removed months earlier.
+    </p>
+
+    <h2>Entra ID specifics that certification prep skips</h2>
+
+    <p>
+      Vendor-neutral certifications deliberately avoid platform specifics. That's appropriate
+      for what they're doing, but it means there's a translation layer between the
+      conceptual model and what you actually configure in Entra ID.
+    </p>
+
+    <p>
+      A few things that helped bridge that gap: reading the Microsoft Identity Platform
+      documentation alongside the study material (not instead of it), and then immediately
+      building the thing I'd just read about in a test tenant. Reading about Conditional
+      Access named locations and then spending an hour configuring one cements the concept
+      in a way that reading alone doesn't.
+    </p>
+
+    <h2>What I'd tell someone starting out</h2>
+
+    <p>
+      Don't treat certification prep as test prep. Treat it as a structured reading list
+      with a forcing function at the end. The value is in the coverage and the depth,
+      not in knowing which answer is correct for the scenario on page 47.
+    </p>
+
+    <p>
+      And build things while you study. The concepts that stick are the ones you've
+      seen fail and had to fix.
     </p>
 
     <div class="links" style="margin-top: 30px;">
