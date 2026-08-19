@@ -65,29 +65,6 @@ a:hover{
   flex-wrap:wrap;
 }
 
-/* Blog index */
-.blog-list{
-  margin-top:22px;
-}
-
-.post-preview{
-  padding:14px 0;
-  border-top:1px solid rgba(148,163,184,0.18);
-}
-
-.post-preview:first-child{
-  border-top:0;
-  padding-top:0;
-}
-
-.post-preview h2{
-  margin:0 0 6px;
-}
-
-.post-preview p{
-  margin:0;
-  font-size:0.98rem;
-}
 
 @media (max-width: 480px){
   h1{ font-size: 2rem; }
